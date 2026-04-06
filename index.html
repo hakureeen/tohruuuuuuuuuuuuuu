@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="A little space made just for you, Xylielie.">
+  <title>For Xylielie 🌸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="sectionHeader" class="section-header">Intro</div>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="photo/rbf.png" alt="Xylielie" class="nav-logo">
+      <span>Xylieee</span>
+    </div>
+    <div class="nav-links">
+      <a href="#home" class="active">Intro</a>
+      <a href="#about">Letter</a>
+      <a href="#reasons">Reasons</a>
+      <a href="#projects">Memories</a>
+      <a href="#contact">Question</a>
+    </div>
+  </nav>
+
+  <!-- SECTION 1: INTRO -->
+  <section id="home" class="section svg-1">
+    <div class="content">
+      <h1>Hi, Xylielie 🌸</h1>
+      <p class="sub">This little space is made just for you.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: LETTER — image left, text right -->
+  <section id="about" class="section solid-pink split-section">
+    <div class="split-container">
+      <div class="split-image">
+        <img src="photo/left.jpg" alt="Your Image" class="split-img" loading="lazy">
+      </div>
+      <div class="split-text">
+        <h1 class="title">Something I have been meaning to say</h1>
+        <p class="letter">
+          I've been meaning to say this for a while now…
+          Every moment with you feels different — lighter, happier, and real.
+          You've become someone I look forward to every day,
+          and I honestly didn't expect that to happen so naturally.
+          I don't know where this will go, but I want to try — with you.
+          To know you more, to be there for you, and maybe… be someone important in your life.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: REASONS — text left, image right -->
+  <section id="reasons" class="section solid-white split-section">
+    <div class="split-container">
+      <div class="split-text">
+        <h1 class="title">Why it's you</h1>
+        <p class="letter">
+          It's the way you laugh without holding back.
+          The way you care so deeply, even when you don't say it out loud.
+          You make ordinary moments feel like something worth remembering —
+          and honestly, that's rare.
+          I noticed you long before I found the words,
+          and every day I'm more sure that I want to keep noticing you.
+        </p>
+      </div>
+      <div class="split-image">
+        <img src="photo/right.jpg" alt="Why it's you" class="split-img" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: MEMORIES -->
+  <section id="projects" class="section svg-2">
+    <div class="content">
+      <h1 class="visually-hidden">Memories</h1>
+      <p class="sub">Moments I never want to forget.</p>
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: QUESTION -->
+  <section id="contact" class="section solid-white">
+    <div class="content">
+      <h1>So...</h1>
+      <p class="sub">May I court you and make you happy?</p>
+    </div>
+  </section>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Enlarged Memory">
+  </div>
+
+  <script src="script.js"></script>
+
+  <audio id="bgMusic" src="music/bgm.mp3" loop></audio>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+</body>
+</html>
