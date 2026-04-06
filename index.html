@@ -26,15 +26,25 @@
     </div>
   </nav>
 
-  <!-- SECTION 1: INTRO -->
   <section id="home" class="section svg-1">
     <div class="content">
       <h1>Hi, Xylielie 🌸</h1>
       <p class="sub">This little space is made just for you.</p>
+
+      <div class="music-controls">
+        <button id="musicBtn" class="music-btn" onclick="toggleMusic()">
+          <span id="musicIcon">▶</span>
+          <span id="musicLabel">Play the vibe</span>
+        </button>
+        <div class="volume-row">
+          <span class="vol-icon" id="volIcon">🔈</span>
+          <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.01" value="0.7">
+          <span class="vol-pct" id="volPct">70%</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- SECTION 2: LETTER — image left, text right -->
   <section id="about" class="section solid-pink split-section">
     <div class="split-container">
       <div class="split-image">
@@ -54,7 +64,6 @@
     </div>
   </section>
 
-  <!-- SECTION 3: REASONS — text left, image right -->
   <section id="reasons" class="section solid-white split-section">
     <div class="split-container">
       <div class="split-text">
@@ -74,7 +83,6 @@
     </div>
   </section>
 
-  <!-- SECTION 4: MEMORIES -->
   <section id="projects" class="section svg-2">
     <div class="content">
       <h1 class="visually-hidden">Memories</h1>
@@ -83,7 +91,6 @@
     </div>
   </section>
 
-  <!-- SECTION 5: QUESTION -->
   <section id="contact" class="section solid-white">
     <div class="content">
       <h1>So...</h1>
@@ -95,10 +102,14 @@
     <img id="lightbox-img" src="" alt="Enlarged Memory">
   </div>
 
-  <script src="script.js"></script>
+  <div id="musicFloat" class="music-float">
+    <button class="float-btn" onclick="toggleMusic()" id="floatPlayBtn">♪</button>
+    <div class="float-volume">
+      <input type="range" id="floatSlider" class="volume-slider float-slider" min="0" max="1" step="0.01" value="0.7">
+    </div>
+  </div>
 
   <audio id="bgMusic" src="music/bgm.mp3" loop></audio>
-
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <script src="script.js"></script>
 </body>
 </html>
