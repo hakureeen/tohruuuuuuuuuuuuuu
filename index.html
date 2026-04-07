@@ -10,6 +10,9 @@
 </head>
 <body>
 
+  <!-- Floating petals canvas -->
+  <canvas id="petalCanvas"></canvas>
+
   <div id="sectionHeader" class="section-header">Intro</div>
 
   <nav class="navbar">
@@ -52,14 +55,17 @@
       </div>
       <div class="split-text">
         <h1 class="title">Something I have been meaning to say</h1>
-        <p class="letter">
-          I've been meaning to say this for a while now…
-          Every moment with you feels different — lighter, happier, and real.
-          You've become someone I look forward to every day,
-          and I honestly didn't expect that to happen so naturally.
-          I don't know where this will go, but I want to try — with you.
-          To know you more, to be there for you, and maybe… be someone important in your life.
+        <div class="letter-box">
+          <p class="letter typewriter" id="letter1"
+          data-text="Greetings to my dearest, Xyrah.
+          I still remember the first time I saw you. It was just an online meetup with friends, nothing out of the ordinary. But then I saw you, and I was completely caught off guard. My first words to you were literally, “watdafak,” because your in game character looked like our friend who had already quit the game.
+          For a moment, I didn’t know what to feel. But as I stayed, I realized it wasn’t that resemblance that made me notice you. It was you. Your confidence, the way you replied so naturally, your wit, it all drew me in. I still remember when you said, “magkasing cute kami,” and in my head I was like, “lalake ‘yun friend namin na may babaeng character HAHAHA.” Pero tama ka nga naman, cute ka.
+          What started as simple curiosity slowly turned into something more, without me even realizing it would become something this meaningful to me. As days went by, it became so natural for me to look for you, visiting you, playing music for you, driving you around. Simple ways para magpapansin sayo, hindi ko nga sure pano dapat gawin HAHHAHHAHA. Good thing you were responsive that time, even if it was just in game. Those moments never felt small to me. I kept getting more curious, more interested, and somehow, being with you just felt right.
+          We started talking more, sharing more of our time, even doing things like starting a TikTok streak. And without me realizing it, my feelings kept growing deeper. I know I already confessed to you in game, and honestly, I regret that a little. Not because I didn’t mean it, but because something this real deserved a better moment. Naalala ko tinanong mo pa ako kung “yun na ba yung confession ko?” Nakakahiya sa part ko in game nag confess HAHHAHAA. You deserved something more sincere than just a line inside a game.
+          I remember telling you that I’d take my time to get to know you more, to prove myself, and to show you that I’m here to stay. And I meant every word of that. And maybe you remember when I sent you “Dive” by Olivia Dean. I think that was the moment I truly realized it, that I had already dived straight into you without even noticing how deep I was falling.
+          And if there’s one thing I’ve learned from all the songs you love, especially the ones from Taylor Swift, it’s that maybe this isn’t just some random connection. Maybe, like an invisible string, something led me to you. Maybe this could be our song, something we slowly build together. Because if there’s one thing I’m sure of, it’s you. You’re someone I want to choose.">
         </p>
+        </div>
       </div>
     </div>
   </section>
@@ -68,14 +74,15 @@
     <div class="split-container">
       <div class="split-text">
         <h1 class="title">Why it's you</h1>
-        <p class="letter">
-          It's the way you laugh without holding back.
-          The way you care so deeply, even when you don't say it out loud.
-          You make ordinary moments feel like something worth remembering —
-          and honestly, that's rare.
-          I noticed you long before I found the words,
-          and every day I'm more sure that I want to keep noticing you.
-        </p>
+        <div class="letter-box">
+          <p class="letter typewriter" id="letter2"
+            data-text="You’re so cute, sana aware ka. I know I’ve already said it to you like a hundred or even a thousand times. You usually think na bola or banat lang, but I genuinely find you cute. Not just the way you look, but everything about you. The things you say, the little things you do, your voice, your smile, your laugh, everything about you has this softness that I can’t help but adore. And in my eyes, you’re perfect.
+            I know we’re far apart, you being from Dumaguete and me from Rizal, but somehow despite the distance, you still feel close to me. And I’m looking forward to flying out and seeing you in person. I know we always talk about “soon” and “puhon.”
+            One day, I hope I can give you real flowers instead of just moments in a game. Not just any flowers, but lilies, your favorite. Something you can hold, something that reminds you of how much you mean to me. I’m not rushing anything, but I want to be honest about what I feel.
+            I usually overthink and sulk a lot, yet you continue to reassure me. I also remember the first time we said “I love you” to each other. Naalala ko ingat na ingat tayo sa word na iyon dati kasi parang ang bilis. I also remember you teasing me, saying na gusto ko pala matawag na baby. Who am I nga naman if I don’t give my whole heart every time? Because when I care, I don’t do it halfway. I don’t know how to love in small pieces when my heart already chose to be sincere. Yung sayo nga sabi mo fiercely eh.
+            Pinasok ko ang mundo mo, kaya obligasyon ko intindihin ka, alagaan ka, at iparamdam sayo na kamahal-mahal ka. Not because you need fixing, but because you deserve to be loved in a way that feels steady, patient, and real. And loving you somehow makes me love myself more too. You make me see parts of me that I didn’t even notice were good. You make me softer, calmer, and more sure of the kind of person I want to be. You’re even in every prayer I make. Not always in words, but in feelings like I’m quietly asking that you’re okay, safe, happy, and guided in everything you do. And every time I look at you, even just in my thoughts or memories, I fall in love with you all over again. It always feels like it’s happening for the first time, repeatedly, like my heart keeps choosing you in the most natural way possible.">
+          </p>
+        </div>
       </div>
       <div class="split-image">
         <img src="photo/right.jpg" alt="Why it's you" class="split-img" loading="lazy">
@@ -98,8 +105,13 @@
     </div>
   </section>
 
+  <!-- Lightbox with prev/next -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lb-arrow lb-prev" onclick="event.stopPropagation(); navigateLightbox(-1)">&#8249;</button>
     <img id="lightbox-img" src="" alt="Enlarged Memory">
+    <button class="lb-arrow lb-next" onclick="event.stopPropagation(); navigateLightbox(1)">&#8250;</button>
+    <button class="lb-close" onclick="closeLightbox()">&#x2715;</button>
+    <span class="lb-counter" id="lbCounter"></span>
   </div>
 
   <div id="musicFloat" class="music-float">
