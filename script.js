@@ -91,10 +91,17 @@ const observer = new IntersectionObserver((entries) => {
 
 sections.forEach(section => observer.observe(section));
 
-const totalPhotos = 43;
+const totalPhotos = 45;
 const gallery     = document.getElementById("gallery");
 
-for (let i = 1; i <= totalPhotos; i++) {
+// Build a shuffled array of photo indices 1–45
+const indices = Array.from({ length: totalPhotos }, (_, i) => i + 1);
+for (let i = indices.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [indices[i], indices[j]] = [indices[j], indices[i]];
+}
+
+for (const i of indices) {
   const src = `photo/p${i}.jpg`;
   const box = document.createElement("div");
   box.className = "img-box";
